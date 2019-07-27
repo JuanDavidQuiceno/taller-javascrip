@@ -13,43 +13,73 @@
  *
  */
 
-let colorCabello = function(personas) {
-  // TODO: Tu codigo aquí!
-  // ...
-  //return 'rainbow';
+var colorCabello = function(personas) {
+      
+      
+
+      if(personas.length > 1){
+
+          var temp = 0;
+          var temp_color = "";
+        for (var i = 0; i < personas.length; i++) {
+          
+          if(temp == 0){
+            if(personas[i].edad > personas[i+1].edad){
+               temp = personas[i].edad;
+               temp_color = personas[i].colorCabello;
+          }else{
+               temp = personas[i+1].edad;
+               temp_color = personas[i+1].colorCabello; 
+          }  
+          }else{
+            if(temp >= personas[i].edad){
+
+                return temp_color;
+            }else{
+                return personas[i+1].colorCabello;
+            }
+          }
+          
+
+        }
+
+      }else{
+        return personas[0].colorCabello;
+      } 
+
 };
 
 // Prueba (No modificar)
 
-const persona1 = {
+var persona1 = {
   nombres: 'Kirk',
   apellidos: 'Hummer',
   edad: 27,
   colorCabello: 'Rubio'
 };
-const persona2 = {
+var persona2 = {
   nombres: 'Homero',
   apellidos: 'Simpson',
   edad: 30,
   colorCabello: 'Cafe Oscuro'
 };
-const persona3 = {
+var persona3 = {
   nombres: 'Eric',
   apellidos: 'Cartman',
   edad: 10,
   colorCabello: 'Cafe'
 };
-const persona4 = {
-  nombres: 'John Wick',
+var persona4 = {
+  nombres: 'Rick',
   apellidos: '-',
-  edad: 45,
+  edad: 105,
   colorCabello: 'Azul'
 };
 
-let personas1 = [persona1];
-let personas2 = [persona1, persona3];
-let personas3 = [persona1, persona2, persona3];
-let personas4 = [persona3, persona4];
+var personas1 = [persona1];
+var personas2 = [persona1, persona3];
+var personas3 = [persona1, persona2, persona3];
+var personas4 = [persona3, persona4];
 
 if (colorCabello(personas1) === 'Rubio' &&
     colorCabello(personas2) === 'Rubio' &&

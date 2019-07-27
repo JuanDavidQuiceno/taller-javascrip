@@ -3,25 +3,26 @@
  *
  * e.g. [2, 3, 4] -> [4, 6, 8]
  *
- * Autor:juan david quiceno
- * Fecha: 27/07/2019
+ * Autor:
+ * Fecha: 
  *
  */
 
- let arrayDoble = function(array, callback) {
-   // TODO: Tu codigo aqui!
-   // ...
+
+ var arrayDoble = function(array, callback) {
+
+   		for (var i = array.length - 1; i >= 0; i--) {
+   			array[i] = callback(array[i]);
+   		}
  };
 
- let array = [2, 3, 4];
+ var array = [2, 3, 4];
 
- arrayDoble(array, (value) => {
-   // TODO: Tu codigo aqui!
-   // ...
+ arrayDoble(array, function(value) {
+  	return value * 2;
  });
 
 // Prueba (No modificar!)
-
 if (array.length === 3 &&
     array[0] === 4 &&
     array[1] === 6 &&
